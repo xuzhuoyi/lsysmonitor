@@ -60,10 +60,10 @@ void ProcessInfoPage::__ShowTabInfo()
     QString proState; //进程状态
     QString proPri; //进程优先级
     QString proMem; //进程占用内存
-    QListWidgetItem *title = new QListWidgetItem("PID\t" + QString::fromUtf8("名称") + "\t\t" +
-                                                 QString::fromUtf8("状态") + "\t" +
-                                                 QString::fromUtf8("优先级") + "\t" +
-                                                 QString::fromUtf8("占用内存"), m_pListWidgetProcess);
+    QListWidgetItem *title = new QListWidgetItem(tr("PID")+ "\t" + tr("Name") + "\t\t" +
+                                                 tr("State") + "\t" +
+                                                 tr("Priority") + "\t" +
+                                                 tr("Memory"), m_pListWidgetProcess);
     //循环读取进程
     while (1)
     {
