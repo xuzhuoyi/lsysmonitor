@@ -35,6 +35,9 @@ ProcessInfoPage::ProcessInfoPage(QWidget *parent) :
 
     setLayout(m_pGridLayoutMain);
 
+    connect(m_pPushButtonKill, SIGNAL(clicked()), this, SLOT(on_pushButtonKill_clicked()));
+    connect(m_pPushButtonRefresh, SIGNAL(clicked()), this, SLOT(on_pushButtonRefresh_clicked()));
+
     __ShowTabInfo();
 }
 
@@ -132,4 +135,21 @@ void ProcessInfoPage::__ShowTabInfo()
     m_pLabelProcessZombie->setText(tr("Zombie:" )+ " " + temp);
 
     tempFile.close(); //关闭该PID进程的状态文件
+}
+
+void ProcessInfoPage::on_pushButtonKill_clicked()
+{
+    //获得进程号
+    QListWidgetItem *item = m_pListWidgetProcess->currentItem();
+    QString pro = item->text();
+    pro = pro.section("\t", 0, 0);
+    system("kill " + pro.toLatin1());
+    QMessageBox::warning(this, tr("kill"), QString::fromUtf8("该进程已被杀死!"), QMessageBox::Yes);
+    //回到进程信息tab表
+    __ShowTabInfo();
+}
+
+void ProcessInfoPage::on_pushButtonRefresh_clicked()
+{
+
 }

@@ -31,6 +31,8 @@ Widget::Widget(QWidget *parent)
 
 
     setLayout(m_pVBoxLayoutMain);
+
+    resize(620, 400);
 }
 
 Widget::~Widget()

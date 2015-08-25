@@ -19,6 +19,8 @@ public:
 signals:
 
 public slots:
+    void on_pushButtonKill_clicked();
+    void on_pushButtonRefresh_clicked();
 
 private:
     QListWidget *m_pListWidgetProcess;
