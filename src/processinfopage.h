@@ -3,6 +3,13 @@
 
 #include <QWidget>
 
+class QListWidget;
+class QPushButton;
+class QHBoxLayout;
+class QVBoxLayout;
+class QGridLayout;
+class QLabel;
+
 class ProcessInfoPage : public QWidget
 {
     Q_OBJECT
@@ -12,6 +19,20 @@ public:
 signals:
 
 public slots:
+
+private:
+    QListWidget *m_pListWidgetProcess;
+    QPushButton *m_pPushButtonKill;
+    QPushButton *m_pPushButtonRefresh;
+    QLabel *m_pLabelProcessNumber;
+    QLabel *m_pLabelProcessRunning;
+    QLabel *m_pLabelProcessSleeping;
+    QLabel *m_pLabelProcessZombie;
+    QVBoxLayout *m_pVBoxLayoutLabel;
+    QHBoxLayout *m_pHBoxLayoutButton;
+    QGridLayout *m_pGridLayoutMain;
+
+    void __ShowTabInfo();
 
 };
 

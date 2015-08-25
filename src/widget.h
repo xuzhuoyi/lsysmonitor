@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class MemoryInfoPage;
+class ProcessInfoPage;
 
 class QTabWidget;
 class QPushButton;
@@ -26,6 +27,7 @@ private:
     QPushButton *m_pPushButtonReboot;
 
     MemoryInfoPage *m_pMemoryInfoPage;
+    ProcessInfoPage *m_pProcessInfoPage;
 };
 
 #endif // WIDGET_H

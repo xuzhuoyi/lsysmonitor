@@ -1,5 +1,6 @@
 #include "widget.h"
 #include "memoryinfopage.h"
+#include "processinfopage.h"
 
 #include <QTabWidget>
 #include <QPushButton>
@@ -23,7 +24,11 @@ Widget::Widget(QWidget *parent)
     m_pVBoxLayoutMain->addLayout(m_pHBoxLayoutPower);
 
     m_pMemoryInfoPage = new MemoryInfoPage;
+    m_pProcessInfoPage = new ProcessInfoPage;
+
     m_pTabWidget->addTab(m_pMemoryInfoPage, tr("Memory"));
+    m_pTabWidget->addTab(m_pProcessInfoPage, tr("Process"));
+
 
     setLayout(m_pVBoxLayoutMain);
 }
