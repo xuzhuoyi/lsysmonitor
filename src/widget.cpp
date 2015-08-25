@@ -32,10 +32,23 @@ Widget::Widget(QWidget *parent)
 
     setLayout(m_pVBoxLayoutMain);
 
+    connect(m_pPushButtonHalt, SIGNAL(clicked()), this, SLOT(on_pushButtonHalt_clicked()));
+    connect(m_pPushButtonReboot, SIGNAL(clicked()), this, SLOT(on_pushButtonReboot_clicked()));
+
     resize(620, 400);
 }
 
 Widget::~Widget()
 {
 
+}
+
+void Widget::on_pushButtonHalt_clicked()
+{
+    system("halt");
+}
+
+void Widget::on_pushButtonReboot_clicked()
+{
+    system("reboot");
 }

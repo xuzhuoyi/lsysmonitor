@@ -19,6 +19,10 @@ public:
     Widget(QWidget *parent = 0);
     ~Widget();
 
+public slots:
+    void on_pushButtonHalt_clicked();
+    void on_pushButtonReboot_clicked();
+
 private:
     QVBoxLayout *m_pVBoxLayoutMain;
     QHBoxLayout *m_pHBoxLayoutPower;
@@ -28,6 +32,7 @@ private:
 
     MemoryInfoPage *m_pMemoryInfoPage;
     ProcessInfoPage *m_pProcessInfoPage;
+
 };
 
 #endif // WIDGET_H

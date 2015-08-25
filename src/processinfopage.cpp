@@ -151,5 +151,5 @@ void ProcessInfoPage::on_pushButtonKill_clicked()
 
 void ProcessInfoPage::on_pushButtonRefresh_clicked()
 {
-
+    __ShowTabInfo();
 }
