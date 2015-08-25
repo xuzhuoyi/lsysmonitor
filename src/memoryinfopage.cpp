@@ -169,7 +169,8 @@ void MemoryInfoPage::on_timer_timeout()
             {
                 b = -b;
             }
-            m_pProgressBarCPU->setValue(a*100/b);
+            if (b != 0)
+                m_pProgressBarCPU->setValue(a*100/b);
 
             tempFile.setFileName("/proc/stat");
             if ( !tempFile.open(QIODevice::ReadOnly) )
@@ -203,7 +204,8 @@ void MemoryInfoPage::on_timer_timeout()
             {
                 n = -n;
             }
-            m_pProgressBarCPU->setValue( (n-m)*100/n );
+            if (n != 0)
+                m_pProgressBarCPU->setValue( (n-m)*100/n );
             tempFile.close(); //关闭stat文件
         }
 }
